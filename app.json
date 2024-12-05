@@ -1,0 +1,60 @@
+{
+  "name": "Bot Status Checker",
+  "description": "A Telegram bot that monitors the uptime status of specified bots and updates in a designated channel.",
+  "keywords": [
+    "telegram",
+    "bot",
+    "status",
+    "uptime",
+    "monitoring"
+  ],
+  "repository": "https://github.com/Ns-AnoNymouS/bot-status/tree/master",
+  "env": {
+    "API_ID": {
+      "description": "Your API ID from https://my.telegram.org",
+      "value": ""
+    },
+    "API_HASH": {
+      "description": "Your API Hash from https://my.telegram.org",
+      "value": ""
+    },
+    "SESSION_STRING": {
+      "description": "Your Telegram account session string. Check README for details.",
+      "value": ""
+    },
+    "CHANNEL_ID": {
+      "description": "The ID of the channel where status updates will be sent",
+      "value": ""
+    },
+    "MESSAGE_IDS": {
+      "description": "IDs of messages to be edited, separated by spaces if more than one",
+      "value": ""
+    },
+    "BOTS": {
+      "description": "List of bot usernames to monitor, separated by spaces",
+      "value": ""
+    },
+    "SLEEP_TIME": {
+      "description": "Time in minutes between each check",
+      "value": "",
+      "required": false
+    },
+    "GET_NOFIFIED": {
+      "description": " Set to True to receive notifications in saved messages if a bot is down (default: False)",
+      "value": "False",
+      "required": false
+    }
+  },
+  "addons": [],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "Eco"
+    }
+  }
+}
